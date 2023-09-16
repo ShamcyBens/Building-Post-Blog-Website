@@ -1,0 +1,31 @@
+<!-- appname/templates/appname/post_detail.html -->
+{% extends "appname/base.html" %}
+{% load static %}
+
+{% block title %}Post Detail - Your Website Title{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1 style="color:green;"class="card-title">{{ post.title }}</h1>
+                    <p class="card-text">
+                        {{ post.description }}
+                    </p>
+                    <hr>
+                    <br>
+                    <div class="post-content">
+                        {{ post.document|safe }}
+                    </div>
+                    <hr>
+                    <p class="card-text">Published on {{ post.pub_date|date:"F d, Y" }}</p>
+                    <br>
+                    <a href="{{ post.document.url }}" class="btn btn-primary" download>Download Document</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "appname/base.html" %}
+{% load static %}
+{% block title %}Home - Your Website Title{% endblock %}
+
+{% block content %}
+<style>
+    .jumbotron {
+        background-color: #f8f9fa;
+        padding: 60px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    .jumbotron h1 {
+        font-size: 36px;
+        color: #333;
+    }
+
+    .jumbotron p {
+        font-size: 18px;
+        color: #555;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    .card ig {
+        max-width: 40%;
+        max-height: 40%;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .card-body {
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .card-text {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .carousel slide{
+        max-width:50%;
+    }
+</style>
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Your Website</h1>
+    <p class="lead">Explore our content, engage with our community, and discover amazing stories.</p>
+    <a href="{% url 'view_posts' %}" class="btn btn-primary btn-lg">Explore Blogs</a>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/card1.jpg' %}" alt="Image 1">
+                <div class="card-body">
+                    <h5 class="card-title">Exciting Posts</h5>
+                    <p class="card-text">Discover a wide range of exciting posts on various topics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/card2.jpg' %}" alt="Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Inspiring Blogs</h5>
+                    <p class="card-text">Read inspiring blogs shared by our talented authors.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/card3.jpg' %}" alt="Image 3">
+                <div class="card-body">
+                    <h5 class="card-title">Join Our Community</h5>
+                    <p class="card-text">Become a part of our community and share your own stories.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="image-gallery" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Image Gallery</h2>
+            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExample" data-slide-to="1"></li>
+                    <li data-target="#carouselExample" data-slide-to="2"></li>
+                    <!-- Add more indicators as needed -->
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'gallery/gallery1.jpg' %}" class="card-ig" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'gallery/gallery2.jpg' %}" class="card-ig" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'gallery/gallery3.jpg' %}" class="card-ig" alt="Image 3">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'gallery/gallery4.jpg' %}" class="card-ig" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'gallery/gallery5.jpg' %}" class="card-ig" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'gallery/gallery6.jpg' %}" class="card-ig" alt="Image 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'gallery/gallery7.jpg' %}" class="card-ig" alt="Image 3">
+                    </div>
+                    <!-- Add more images as needed -->
+                </div>
+                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    
+</section>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!-- appname/templates/appname/view_posts.html -->
+{% extends "appname/base.html" %}
+{% load static %}
+
+{% block title %}View Posts - Your Website Title{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <a href="{% url 'post_detail' post_id=post.id %}">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRntLAs6c9Bz_Y9VlfgnD_RaSpyYGQr6j7vtAXAzmMH6Q&s" class="card-img-top" alt="{{ post.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.description|truncatewords:20 }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
